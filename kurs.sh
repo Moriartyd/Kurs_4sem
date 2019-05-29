@@ -17,7 +17,7 @@ cat $FILE | grep 'tmp' | awk '{print "rm -Rf \047" $2"\047"}'> $RMSCRIPT
 cat $FILE | grep 'tmp' | awk '{print "cp -Rf \047"$2 "\047 \047'$BCKPDT'\047"}'> $BUSCRIPT
 cat $FILE | grep 'cache' | awk '{print "rm -Rf \047"$2"\047"}'>> $RMSCRIPT
 cat $FILE | grep 'cache' | awk '{print "cp -Rf \047"$2 "\047 \047'$BCKPDT'\047"}'>> $BUSCRIPT
-sh $BUSCRIPT
+bash $BUSCRIPT
 echo "tar -xvf $ARHVNAME" > $BCKPD/Backup.sh
 cat $FILE | grep 'tmp' | awk '{print "cp -Rf " "\047" $NF "\047 \047"$2"\047"}'>> $BCKPD/Backup.sh
 cat $FILE | grep 'cache' | awk '{print "cp -Rf " "\047" $NF "\047 \047"$2"\047"}'>> $BCKPD/Backup.sh
